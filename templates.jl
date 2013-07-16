@@ -27,8 +27,8 @@ index_tmpl = "$header_tmpl
 <h1>{{title}}</h1>
 </div>
 <div class=\"row\">
-  <div class=\"span4\">name</div>
-  <div class=\"span8\">summary</div>
+  <div class=\"span4\"><h2>Name</h2></div>
+  <div class=\"span8\"><h2>Summary</h2></div>
 </div>
 {{#d}}
 <div class=\"row\">
