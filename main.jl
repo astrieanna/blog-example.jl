@@ -4,7 +4,7 @@ require("templates.jl")
 println("connecting to db")
 conn = connect("blog.db")
 posts = query("select * from posts",conn)
-names = posts["title"]
+posts["url"] = map(str -> replace(str," ","%20"),posts["title"])
 
 println("about to run")
 run(Server((req,res)-> begin 
@@ -12,7 +12,7 @@ run(Server((req,res)-> begin
     return Response(render(index_tmpl,{"title"=>"Contents","d"=>posts}))
   end
   i = 0 
-  for name in names
+  for name in posts["url"]
     i += 1
     if ismatch(Regex("^/$name\$"),req.resource)
       return Response(render(post_tmpl,
