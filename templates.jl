@@ -15,7 +15,7 @@ index_tmpl = "$header_tmpl
 <table>
 <tr><th>name</th><th>summary</th></tr>
 {{#d}}
-<tr><td>{{title}}</td><td>{{summary}}</td></tr>
+<tr><td><a href={{url}}>{{title}}</a></td><td>{{summary}}</td></tr>
 {{/d}}
 </table>
 $footer_tmpl"
